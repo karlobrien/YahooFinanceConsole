@@ -14,5 +14,7 @@ let prices = urlList |> Seq.map fetchWithAsync
             |> Async.RunSynchronously
             |> Seq.collect htmlToMarketData
 
-let maxClose2 = prices |> Seq.maxBy (fun m -> m.Close)
-printfn "%f" maxClose2.Close 
+//let maxClose2 = prices |> Seq.maxBy (fun m -> m.Close)
+//printfn "%f" maxClose2.Close 
+let result = prices |> Seq.maxBy (fun c -> c.Close)
+printfn "%f" result.Close
