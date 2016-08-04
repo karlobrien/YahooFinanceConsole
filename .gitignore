@@ -1,0 +1,8 @@
+**/FAKE/
+**/packages/
+**/bin/
+**/debug/
+**/build/
+**/.paket
+**/.fake
+paket.lock
