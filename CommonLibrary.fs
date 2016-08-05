@@ -20,3 +20,14 @@ module CommonLibrary =
         row |> Seq.toList
             |> List.filter (fun lst -> lst.Length > 6)
             |> Seq.map (fun c -> convertToMd (name, c))
+    
+    let calculateRequest(name: string, field: string, data: seq<MarketData>) =
+        let values = data |> Seq.where (fun c -> c.Name = name)
+        match field with
+        | "Close" -> values |> Seq.maxBy (fun c -> c.Close)
+        | "AdjClose" -> values |> Seq.maxBy (fun c -> c.AdjClose)
+        | "Open" -> values |> Seq.maxBy (fun c -> c.Open)
+        | "High" -> values |> Seq.maxBy (fun c -> c.High)
+        | "Low" -> values |> Seq.maxBy (fun c -> c.Low)
+        | "Volume" -> values |> Seq.maxBy (fun c -> c.Volume)
+        | _ -> { Name = name; Dt = ""; Open = 0.0; High = 0.0; Low = 0.0; Close = 0.0; AdjClose = 0.0; Volume = 0.0}
