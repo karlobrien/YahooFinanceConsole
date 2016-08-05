@@ -46,8 +46,9 @@
   <ItemGroup>
     <Compile Include="CommonLibrary.fs" />
     <Compile Include="AsyncDownloader.fs" />
-    <Compile Include="YahooFinanceConsole.fs" />
+    <Compile Include="PriceGenerator.fs" />
     <None Include="App.config" />
+    <Compile Include="YahooFinanceConsole.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <Choose>
