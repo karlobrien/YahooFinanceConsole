@@ -1,3 +1,4 @@
 source https://www.nuget.org/api/v2
 nuget fake
 nuget fsharp.core
+nuget paket
