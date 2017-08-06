@@ -6,12 +6,12 @@ open CommonLibrary
 
 module Downloader =
 
-    let fetchWithAsync(name, url:string) = 
+    let fetchWithAsync(name, url:string) =
         async {
-            try 
-                let uri = new System.Uri(url)
+            try
+                let uri = System.Uri(url)
                 let webClient = new WebClient()
                 let! html = webClient.AsyncDownloadString(uri)
                 return (name,html.ToString())
             with error -> return (name, "Error")
-        } 
+        }
